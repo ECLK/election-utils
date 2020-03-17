@@ -199,16 +199,15 @@ $.ajax({
     for(var i=0;i<data[0].parties.length;i++){
       for(var j=0;j<data[0].parties[i].candidates.length;j++){
       op+='<tr>';
-      op+='<td>'+data[0].parties[i].id+'</td><td>'+data[0].parties[i].id+'</td><td>'+data[0].parties[i].candidates[j].name+'</td>';
+      op+='<td>'+data[0].parties[i].team_name+'</td><td>'+data[0].parties[i].symbol+'</td><td>'+data[0].parties[i].candidates[j].name+'</td>';
       op+='</tr>';   
       }
     }
     $("#tblBellot tbody").empty();
     $("#tblBellot tbody").append(op);
   },
-  error:function(){
-    alert("error");
-
+  error:function(e){
+    alert('error');
   }
 });
 });
