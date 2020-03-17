@@ -69,8 +69,8 @@
              <td align="center"> Administrative District :...............................</td>
              </tr>
 </table>
-<table table border="1" cellpadding="5" width="100%">
-
+<table table border="1" cellpadding="5" width="100%" id="tblBellot">
+<thead>
 <tr><td>එක් එක් පිළිගත් දේශපාලන <br>
 පක්ෂයේ නම/සභ එක් එක්<br>
 ස්වාධීන කණ්ඩායම්<br>
@@ -120,11 +120,15 @@ as set out in the Nomination Paper<br>
 
 </td>
 </tr>
+</thead>
+
+<tbody>
 <tr>
 <td></td>
 <td></td>
 <td></td>
 </tr>
+</tbody>
 
 </table>
 
@@ -164,7 +168,6 @@ as set out in the Nomination Paper<br>
         url:'{!!URL::to('getDistrict')!!}',
         data:{'id':elec_id},
         success:function(data){
-
           op+='<option value="0" disabled="true" >Select District</option>';
           for(var i=0;i<data.length;i++){
           op+='<option value="'+data[i].id+'">'+data[i].name+'</option>';
@@ -181,6 +184,39 @@ as set out in the Nomination Paper<br>
     });
   // -----------------------------------------------------------------------
   
+// -------------------------Get Bellot----------------------------------
+$("#bellot").click(function () {
+  var dist_id = $("select[name='district']").val();
+  var op=" ";
+
+$.ajax({
+  type:'GET',
+  url:'{!!URL::to('getBallot')!!}',
+  data:{'id':dist_id},
+  
+  success:function(data){
+    // alert(data[0].parties.length);
+    for(var i=0;i<data[0].parties.length;i++){
+      for(var j=0;j<data[0].parties[i].candidates.length;j++){
+      op+='<tr>';
+      op+='<td>'+data[0].parties[i].id+'</td><td>'+data[0].parties[i].id+'</td><td>'+data[0].parties[i].candidates[j].name+'</td>';
+      op+='</tr>';   
+      }
+    }
+    $("#tblBellot tbody").empty();
+    $("#tblBellot tbody").append(op);
+  },
+  error:function(){
+    alert("error");
+
+  }
+});
+});
+
+// ---------------------------------------------------------------------
+$("select[name='district']").change(function () {
+      $("#tblBellot tbody").empty();
+});
     </script>
     @endpush
   @endsection
