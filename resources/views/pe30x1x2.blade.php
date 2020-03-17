@@ -141,12 +141,14 @@ $.ajax({
   data:{'id':dist_id},
   
   success:function(data){
-
-    for(var i=0;i<data.length;i++){
-
+    //alert(data[0].parties[0].id);
+    
+    for(var i=0;i<data[0].parties.length;i++){
+      for(var j=0;j<data[0].parties[i].candidates.length;j++){
       op+='<tr>';
-      op+='<td>'+data.parties[i].id+'</td><td>'+data.parties[i].name+'</td><td>'+ddata.parties[i].symbol+'</td>';
+      op+='<td>'+data[0].parties[i].id+'</td><td>'+data[0].parties[i].candidates[j].name+'</td><td>'+"N/A"+'</td>';
       op+='</tr>';   
+      }
     }
     
     $("#tblBellot tbody").empty();

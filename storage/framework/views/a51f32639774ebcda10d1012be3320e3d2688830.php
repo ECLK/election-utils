@@ -17,6 +17,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
   <!-- Custom styles for this template -->
@@ -26,11 +28,17 @@
 
 <body>
 
-  <h1 class="site-heading text-center text-white d-none d-lg-block">
-  <span class="site-heading-lower ">Nomination Outputs</span><br><br>
-    <span class="site-heading-upper text-primary mb-4">Election Commission of Sri lanka</span>
-   
-  </h1>
+<div class="row text-center">
+  <div class="container">
+    <h1 class=" text-center text-dark mt-2">Nomination Outputs</h1>
+    <h2 class=" text-primary text-center mt-2 ">Election Commission of Sri lanka</h2>
+  </div>
+
+</div>
+
+ 
+  
+  
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-2" id="mainNav">
@@ -43,32 +51,32 @@
         <ul class="navbar-nav mx-auto">
 
         <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="index">Home
+            <a class="nav-link text-uppercase text-expanded" href="index"> <i class="fa fa-home" aria-hidden="true">&nbsp;Home </i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href='pe9'>PE09
+            <a class="nav-link text-uppercase text-expanded" href='pe9'><i class="fa fa-file" aria-hidden="true">&nbsp;PE09</i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href='pe10'>PE10
+            <a class="nav-link text-uppercase text-expanded" href='pe10'><i class="fa fa-file" aria-hidden="true">&nbsp;PE10</i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href='pe10x1'>PE10 (1)
+            <a class="nav-link text-uppercase text-expanded" href='pe10x1'><i class="fa fa-file" aria-hidden="true">&nbsp;PE10 (1)</i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="pe11">PE11
+            <a class="nav-link text-uppercase text-expanded" href="pe11"><i class="fa fa-file" aria-hidden="true">&nbsp;PE11</i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="pe30x1x2">PE30(1)(2)
+            <a class="nav-link text-uppercase text-expanded" href="pe30x1x2"><i class="fa fa-file" aria-hidden="true">&nbsp;PE30(1)(2)</i>
               <span class="sr-only">(current)</span>
             </a>
           </li>
