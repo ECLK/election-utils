@@ -73,12 +73,22 @@ class FormController extends Controller
 
       public function getBallot(Request $request){
         $client = resolve('nomination.client');
-    	$response = $client->request('GET','divisions/'.$request->id.'/divisionData');
+        $response = $client->request('GET','divisions/'.$request->id.'/divisionData');
+        $teams = $client->request('GET','teams');
+        $teamBody = $teams->getBody()->getContents();
+        $teamData = json_decode($teamBody,true);
     	$statusCode = $response->getStatusCode();
         $body = $response->getBody()->getContents();
-        $data = json_decode($body);
+        $data = json_decode($body,true);
+        for ($i = 0; $i < count($data[0]['parties']); $i++) {
+            for ($j = 0; $j < count($teamData); $j++) {
+                    if($data[0]['parties'][$i]['id'] == $teamData[$j]['team_id']) {
+                        $data[0]['parties'][$i]['team_name']=$teamData[$j]['team_name'];
+                        $data[0]['parties'][$i]['symbol']=$teamData[$j]['team_symbol'];
+                    break;
+                    }
+            }
+        }
         return response()->json($data);
-        
-        
       }
 }
